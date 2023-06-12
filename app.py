@@ -33,7 +33,7 @@ async def handle_message(update: Update, context: CallbackContext) -> None:
     await update.message.reply_text('This may take few seconds...')
     run_inference("sample.jpeg")
     
-    with open(r'results\restored_imgs\sample.jpeg', 'rb') as photo_file:
+    with open((os.path.join("results","restored_imgs","sample.jpeg"), 'rb') as photo_file:
         await context.bot.send_photo(chat_id=update.message.chat_id, photo=photo_file)
 
 async def handle_text(update: Update, context: CallbackContext) -> None:
