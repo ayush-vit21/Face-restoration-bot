@@ -14,8 +14,8 @@ def run_inference(image_path):
         shutil.rmtree("results")
     
     command = f"python3 inference_gfpgan.py -i {image_path} -o results -v 1.3 -s 2 --bg_upsampler realesrgan"
-    os.system(command)
-    #output = subprocess.check_output(command, shell=False, text=False)    
+    #os.system(command)
+    output = subprocess.check_output(command, shell=False, text=False)    
     print("Inference finished")
 
 
